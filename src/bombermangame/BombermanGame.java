@@ -105,6 +105,8 @@ public class BombermanGame {
             grid[i] = gridItem;
         }
 
+        bufferedReader.close();
+
         String[] result = bomberMan(n, grid);
 
         for (int i = 0; i < result.length; i++) {
