@@ -9,6 +9,9 @@ import java.util.regex.*;
 
 
 // link : https://www.hackerrank.com/challenges/ctci-making-anagrams/problem
+// input : cde
+// input2 : abc
+// output : 4
 public class MaskingAnagrams {
     private static final Scanner scanner = new Scanner(System.in);
 
