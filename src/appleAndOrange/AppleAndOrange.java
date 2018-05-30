@@ -8,12 +8,31 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
+// https://www.hackerrank.com/challenges/apple-and-orange/problem
 public class AppleAndOrange {
 
     // Complete the countApplesAndOranges function below.
     static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int appleCntOnHome = 0, orangeCntOnHome = 0;
+        int applePosition, orangePosition;
+        for(int apple: apples) {
+            applePosition = apple + a;
+            if(isFruitFallOnSamsHouse(s, t, applePosition)) {
+                ++appleCntOnHome;
+            }
+        }
+        for(int orange: oranges) {
+            orangePosition = orange + b;
+            if(isFruitFallOnSamsHouse(s, t, orangePosition)) {
+                ++orangeCntOnHome;
+            }
+        }
+        System.out.println(appleCntOnHome);
+        System.out.println(orangeCntOnHome);
+    }
 
-
+    private static boolean isFruitFallOnSamsHouse(int s, int t, int fruitPosition) {
+        return fruitPosition >= s && fruitPosition <= t;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
