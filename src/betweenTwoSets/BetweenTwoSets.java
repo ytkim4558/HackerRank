@@ -62,6 +62,13 @@ public class BetweenTwoSets {
         return lcd.size();
     }
 
+    /**
+     *
+     * b 행렬 원소의 공약수를 arr 원소중에서 구함
+     * @param b 공약수를 구할 배열
+     * @param arr
+     * @return
+     */
     static ArrayList<Integer> getLCDWithArray(int[] b, ArrayList<Integer> arr) {
         ArrayList<Integer> lcd = new ArrayList<>();
         //
@@ -75,6 +82,7 @@ public class BetweenTwoSets {
             }
             if(!mismatch) {
                 lcd.add(arri);
+                System.out.println(arri);
             }
         }
         return lcd;
@@ -84,7 +92,7 @@ public class BetweenTwoSets {
 
         int max = getMax(a);
         ArrayList<Integer> gcd = new ArrayList<Integer>();
-        for(int i=max; i>=2; --i) {
+        for(int i=max; i>=1; --i) {
             boolean mismatch = false; // 공약수가 안되는 조건이 있는지 확인
             for(int ai: a) {
                 if(ai % i != 0) {
