@@ -11,27 +11,23 @@ public class BirthdayChocolate {
 
     // Complete the solve function below.
     static int solve(int[] s, int d, int m) {
-        int sum;
+        int sum = 0;
         int resultCnt = 0;
         int cnt = 0;
         int[] temp = new int[m];
         for(int i: s) {
             ++cnt;
+            sum -= temp[cnt % m];
             temp[cnt % m] = i;
-            sum = sumArr(temp);
+            sum += i;
+
             if(cnt >= m && sum == d) {
                 ++resultCnt;
             }
+            System.out.println("cnt: "+ cnt + ", i: " + i + ", sum: " + sum + ", resultCnt : " + resultCnt);
         }
-        return resultCnt;
-    }
 
-    static int sumArr(int[] arr) {
-        int sum = 0;
-        for(int i: arr) {
-            sum+=i;
-        }
-        return sum;
+        return resultCnt;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
